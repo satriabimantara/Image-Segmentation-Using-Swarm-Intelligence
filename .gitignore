@@ -1,3 +1,7 @@
+#hide datasets and virtual environtment folder
+datasets/
+venv_S2_citra_digital/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
