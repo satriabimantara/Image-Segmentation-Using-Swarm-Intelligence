@@ -2,6 +2,9 @@
 datasets/
 venv_S2_citra_digital/
 
+# hide results folder
+results/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
