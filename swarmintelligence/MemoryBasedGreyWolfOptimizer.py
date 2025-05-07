@@ -4,10 +4,10 @@ import numpy as np
 import math
 
 
-class MemoryBasedGreyWolfOptimization(SwarmIntelligence):
+class MemoryBasedGreyWolfOptimizer(SwarmIntelligence):
     def __init__(self, k, wolfSize, maxIteration, crossover_rate=0.5, fitness_function='otsu', obj='max', initial_solution=None):
-        super(MemoryBasedGreyWolfOptimization, self).__init__(initial_solution=initial_solution,
-                                                              class_name='MemoryBasedGreyWolfOptimization')
+        super(MemoryBasedGreyWolfOptimizer, self).__init__(initial_solution=initial_solution,
+                                                           class_name='MemoryBasedGreyWolfOptimizer')
         # initialize GWO parameter
         self.NUM_WOLF_ELEMENT = k
         self.WOLF_SIZE = wolfSize
@@ -26,7 +26,7 @@ class MemoryBasedGreyWolfOptimization(SwarmIntelligence):
             self.FITNESS_FUNCTION = self.mMasi_entropy_method
 
     def fit_run(self, image_array):
-        super(MemoryBasedGreyWolfOptimization, self).fit_run(image_array)
+        super(MemoryBasedGreyWolfOptimizer, self).fit_run(image_array)
         # tentukan Batas atas dan Batas bawah dari partikel
         self.LOWER_BOUND = min(image_array.ravel())
         self.UPPER_BOUND = max(image_array.ravel())
@@ -167,7 +167,7 @@ class MemoryBasedGreyWolfOptimization(SwarmIntelligence):
             # append to best and worst fitness tracking
             best_fitness_tracking.append(wolf_best_value)
             worst_fitness_tracking.append(wolf_worst_value)
-            # print(f"Iteration {iteration} = {wolf_best_value}")
+            print(f"Iteration {iteration} = {wolf_best_value}")
 
         # cari wolf alpha sebagai solusi terbaik
         best_thresholds = np.sort(alphaWolf)

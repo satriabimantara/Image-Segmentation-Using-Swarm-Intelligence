@@ -2,8 +2,12 @@ from .GeneticAlgorithm import GeneticAlgorithm
 from .ParticleSwarmOptimization import ParticleSwarmOptimization
 from .SlimeMouldAlgorithm import SlimeMouldAlgorithm
 from .GreyWolfOptimization import GreyWolfOptimization
-from .MemoryBasedGreyWolfOptimizer import MemoryBasedGreyWolfOptimization
+from .MemoryBasedGreyWolfOptimizer import MemoryBasedGreyWolfOptimizer
 from .InspiredGreyWolfOptimizer import InspiredGreyWolfOptimizer
 from .EEGreyWolfOptimizer import EEGreyWolfOptimizer
 from .WhaleOptimizationAlgorithm import WhaleOptimizationAlgorithm
+from .__backupEelGrouperOptimizer import EelGrouperOptimizer
+from .EelGrouperOptimizer import EelGrouperOptimizer
+from .ArchimedesOptimizationAlgorithm import ArchimedesOptimizationAlgorithm
+from .GreaterCaneRatAlgorithm import GreaterCaneRatAlgorithm
 from .Utils import Utilization

@@ -5,7 +5,7 @@ import math
 
 
 class EEGreyWolfOptimizer(SwarmIntelligence):
-    def __init__(self, k, wolfSize, maxIteration, a_initial=2, a_final=0, modulation_index=1.5, b1=0.1, b2=0.9, fitness_function='otsu', obj='max', initial_solution=None):
+    def __init__(self, k, wolfSize, maxIteration, a_initial=4, a_final=0, modulation_index=0.25, b1=0.3, b2=0.2, fitness_function='otsu', obj='max', initial_solution=None):
         super(EEGreyWolfOptimizer, self).__init__(initial_solution=initial_solution,
                                                   class_name='EEGreyWolfOptimizer')
 
@@ -117,14 +117,21 @@ class EEGreyWolfOptimizer(SwarmIntelligence):
                 greyWolfs[idx_wolf] = (b1 * rd.uniform(0, 1) * (X1+X2+X3)/3) + (
                     b2 * rd.uniform(0, 1) * np.abs(random_selected_wolf - greyWolfs[idx_wolf]))
 
-            # set grey wolf position boundaries
-            for idx_wolf in range(n_wolfs):
                 for dimension in range(dim):
                     if greyWolfs[idx_wolf][dimension] < xmin:
                         greyWolfs[idx_wolf][dimension] = xmin
                     elif greyWolfs[idx_wolf][dimension] > xmax:
                         greyWolfs[idx_wolf][dimension] = xmax - \
                             (round(rd.uniform(0, 1) * rd.randint(xmin, xmax)))
+
+            # set grey wolf position boundaries
+            # for idx_wolf in range(n_wolfs):
+            #     for dimension in range(dim):
+            #         if greyWolfs[idx_wolf][dimension] < xmin:
+            #             greyWolfs[idx_wolf][dimension] = xmin
+            #         elif greyWolfs[idx_wolf][dimension] > xmax:
+            #             greyWolfs[idx_wolf][dimension] = xmax - \
+            #                 (round(rd.uniform(0, 1) * rd.randint(xmin, xmax)))
 
             # round and set to integer from floating number
             greyWolfs = np.round(greyWolfs).astype('int64')
